@@ -43,14 +43,14 @@ final class CoffeeViewModelTests: XCTestCase {
     do {
       // 2
       try await model.saveCoffee(coffeeToSave)
-      XCTFail("Coffee with no name should throw empty name error")
+      XCTFail("⚠️Coffee with no name should throw empty name error")
     } catch CoffeeViewModel.CoffeeError.emptyName {
       // 3
       XCTAssert(model.showCoffeeErrorAlert)
       XCTAssertEqual(model.saveCoffeeError, .emptyName)
     } catch {
       // 4
-      XCTFail("Coffee with no name should throw empty name error")
+      XCTFail("⚠️Coffee with no name should throw empty name error")
     }
   }
 
